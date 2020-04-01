@@ -1,0 +1,41 @@
+import java.util.*;
+class patient
+{
+	String name;
+	int age;
+	long phone;
+	patient(String name,int age,long phone)
+	{
+	this.name=name;
+	this.age=age;
+	this.phone=phone;
+	}
+	void display()
+	{
+	System.out.println(name+","+age+","+phone);
+	}
+	public static void main(String args[])
+	{
+	Scanner sc=new Scanner(System.in);
+	ArrayList<patient> al=new ArrayList<patient>();
+	System.out.println("Enter total no.of records:");
+	int n=sc.nextInt();
+	patient[] obj=new patient[n];
+	for(int i=0;i<n;i++)
+	{
+		System.out.println("Enter name of the patient:");
+		String na=sc.next();
+		System.out.println("Enter age of the patient:");
+		int ag=sc.nextInt();
+		System.out.println("Enter contact number of the patient:");
+		long no=sc.nextLong();
+		obj[i]=new patient(na,ag,no);
+	}
+	System.out.println("Displaying the records of patients:");
+	for(int i=0;i<n;i++)
+	{
+		obj[i].display();
+		al.add(obj[i]);
+	}
+	}
+}
